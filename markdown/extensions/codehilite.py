@@ -130,6 +130,7 @@ class CodeHilite:
 
         if pygments and self.use_pygments:
             try:
+                self.options['cssclass'] = self.options['cssclass'] + " " + self.lang
                 lexer = get_lexer_by_name(self.lang, **self.options)
             except ValueError:
                 try:
